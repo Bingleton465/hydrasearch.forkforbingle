@@ -4,6 +4,6 @@
 
 - My Main Website is [mathpunch V3](https://mathpunch.github.io/)
 
-<h3 align="center">A Supersonic Proxy Made By mathpunch</h3>
+<h3 align="center">A Supersonic Proxy Made By Ozzy Using Ultraviolet Static</h3>
 <p align="center">
 </p>
