@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proxy Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Proxy Page</h1>
+        <div class="proxy-content">
+            <form id="proxy-form">
+                <input type="text" id="url-input" placeholder="Enter URL (Using Ultraviolet)">
+                <button type="submit">Go</button>
+            </form>
+            <button id="fullscreen-btn">Fullscreen</button>
+            <iframe id="proxy-frame"></iframe>
+        </div>
+    </div>
+    <script>
+        document.getElementById('proxy-form').onsubmit = function(event) {
+            event.preventDefault();
+            const url = document.getElementById('url-input').value;
+            document.getElementById('proxy-frame').src = `/service/${encodeURIComponent(url)}`;
+        };
+
+        document.getElementById('fullscreen-btn').onclick = function() {
+            const iframe = document.getElementById('proxy-frame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { 
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { 
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { 
+                iframe.msRequestFullscreen(); 
+            }
+        };
+    </script>
+</body>
+</html> 
